@@ -1,0 +1,22 @@
+<!-- <view class="bg-green light bg">
+  <view class="flex publish">
+    <view class="flex-sub   text-center">
+      <view class="cu-tag bg-green text-xl padding-lg radius" bindtap="findGoods">失物寻找</view>
+    </view>
+    <view class="flex-sub  text-center">
+      <view class="cu-tag bg-green text-xl padding-lg radius" bindtap="backGoods">失物归还</view>
+    </view>
+  </view>
+</view> -->
+
+<!-- 下雨天 -->
+<view class='bg weather rain' style="background: url('{{rain_bg}}');background-repeat: no-repeat;background-size: 100% 100%;">
+    <view class="flex publish choose">
+      <view class="flex-sub   text-center">
+        <view class="cu-tag bg-green text-xl padding-lg round" bindtap="findGoods">寻找失物</view>
+      </view>
+      <view class="flex-sub  text-center">
+        <view class="cu-tag bg-green text-xl padding-lg round" bindtap="backGoods">归还失物</view>
+      </view>
+    </view>
+</view>

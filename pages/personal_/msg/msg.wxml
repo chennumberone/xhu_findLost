@@ -1,0 +1,30 @@
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">消 息</view>
+</cu-custom>
+<view class="out">
+
+  <view wx:for="{{msgData}}">
+    <view class="text-center margin-bottom-sm margin-top-lg">
+      {{item.msgTime}}
+    </view>
+
+    <view class="bg-white radius padding-sm padding-bottom-xl">
+      <view class="title">
+        {{item.msgTitle}}
+      </view>
+
+      <view class="{{item.status?'content1':'content'}} margin-top-sm margin-bottom-sm">
+        {{item.msgContent}}
+      </view>
+
+      <view class="text-green fr" data-index="{{item.index}}" bindtap="changeStatus">
+        {{item.status?'收起':'展开'}}
+      </view>
+
+    </view>
+
+  </view>
+
+
+</view>

@@ -1,0 +1,12 @@
+.out{
+  padding:30rpx;
+}
+.contain{
+  width: 100%;
+  border-radius: 15rpx;
+}
+.contain image{
+  width: 350rpx;
+  height:280rpx;
+  border-radius: 10rpx;
+}

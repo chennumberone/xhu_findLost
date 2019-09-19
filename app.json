@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/main/main",
+    "pages/personal_/friend/friend",
+    "pages/personal_/msg/msg",
+    "pages/personal_/history/history",
+    "pages/personal_/log/log",
+    "pages/personal_/info/info",
+    "pages/main/single/single",
+    "pages/personal/personal",
+    "pages/index/index",
+    "pages/publish/publish",
+    "pages/personal_/suggest/suggest",
+    "pages/publish_main/publish_main"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "cu-custom": "ColorUI/colorui/components/cu-custom"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/main/main",
+        "text": "动态",
+        "iconPath": "img/school1.png",
+        "selectedIconPath": "img/school.png"
+      },
+      {
+        "pagePath": "pages/publish_main/publish_main",
+        "text": "发布",
+        "iconPath": "img/publish1.png",
+        "selectedIconPath": "img/publish.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "我的",
+        "iconPath": "img/mine1.png",
+        "selectedIconPath": "img/mine.png"
+      }
+    ]
+  }
+}

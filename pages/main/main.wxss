@@ -1,0 +1,29 @@
+.content-mine{
+  height: 360rpx;
+  border-radius: 15rpx;
+}
+.info-img{
+  height: 200rpx;
+}
+.info-img image{
+  height: 200rpx;
+}
+.fixed-mine{
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  height: 85rpx
+}
+.cuIcon-unfold{
+  font-size: 30rpx;
+}
+
+.select{
+border-bottom:2px solid green
+}
+.category-change{
+   opacity: 0.9;
+   transform: scale(1.01,1.01);
+}
+
+

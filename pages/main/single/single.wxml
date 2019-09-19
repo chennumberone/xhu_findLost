@@ -1,0 +1,73 @@
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">详情</view>
+</cu-custom>
+<view class="contain">
+  <view class="photo shadow-warp" bindtap="ViewImage">
+    <image src="{{url}}{{singleData.goodsPhoto}}" class=""></image>
+  </view>
+
+
+  <view class="content">
+    <!-- 基本属性 -->
+    <view class="flex">
+      <view>
+        <text style="font-size:50rpx">{{singleData.goodsSmallkind}}</text>
+      </view>
+      <view class="text-shadow align-center flex margin-left-lg">
+        <text style="font-size:30rpx" class="cu-tag line-green">{{singleData.goodsBigkind}}</text>
+      </view>
+    </view>
+
+    <!-- 时间 -->
+    <view class="flex margin-top-lg">
+      <view>
+        <image src="../../../img/time.png"></image>
+      </view>
+      <view class="text-shadow align-center flex margin-left-lg">
+        <text style="font-size:40rpx">{{singleData.goodsPubtime}}</text>
+      </view>
+    </view>
+
+
+     <!-- 地点 -->
+    <view class="flex margin-top-lg">
+      <view>
+        <image src="../../../img/place.png"></image>
+      </view>
+      <view class="text-shadow align-center flex margin-left-lg">
+        <text style="font-size:40rpx">{{singleData.goodsPlace}}</text>
+      </view>
+    </view>
+
+    <!-- 附言 -->
+    <view class="margin-top-lg flex">
+      <view class="margin-right-lg">
+        <image src="../../../img/detail.png"></image>
+      </view>
+      <view style="font-size:36rpx">
+       {{singleData.goodsPostscript}}
+      </view>
+    </view>
+
+    <!-- 联系方式 -->
+    <view class="margin-top-lg flex align-center margin-bottom-lg">
+      <view class="margin-right-lg">
+        <image src="../../../img/contact.png"></image>
+      </view>
+      <view wx:if="{{isContactVisibal}}" style="font-size:40rpx">
+        {{singleData.goodsContact}}
+      </view>
+      <navigator url="../../personal_/info/info" wx:else style="font-size:35rpx" class="text-red person">
+        完善个人信息后查看
+      </navigator>
+      <view wx:if="{{isContactVisibal}}" class=" margin-left-xl cu-tag bg-pink light round" bindtap="copyContact">
+        复制
+      </view>
+      <view class="margin-left-xl cu-tag line-green">
+        {{singleData.goodsContactWay}}
+      </view>
+      
+    </view>
+  </view>
+</view>

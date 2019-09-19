@@ -1,0 +1,11 @@
+.cu-form-group .title {
+  min-width: calc(4em + 30rpx);
+}
+.icon-mail{
+  font-size: 100rpx;
+}
+.mystyle{
+  height:280rpx;
+  padding-top:90rpx;
+  padding-bottom:90rpx;
+}

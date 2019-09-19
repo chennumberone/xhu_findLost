@@ -1,0 +1,3 @@
+/**app.wxss**/
+@import 'ColorUI/colorui/icon.wxss';
+@import 'ColorUI/colorui/main.wxss';

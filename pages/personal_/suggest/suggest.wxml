@@ -1,0 +1,66 @@
+<!-- 意见和建议 -->
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">反馈</view>
+</cu-custom>
+
+<view class="text-center text-xl bg-green light mystyle align-center ">
+
+  <text class="cuIcon-mail icon-mail text-green"></text>
+
+</view>
+
+<view class="cu-form-group text-lg">
+  <view>
+    <text class="cuIcon-write"></text> 意见和建议
+  </view>
+</view>
+
+<view class="cu-form-group margin-top-sm">
+  <textarea maxlength="-1" bindinput="textareaAInput" placeholder="亲，请输入您的意见或者建议或者小程序出现的异常问题"></textarea>
+</view>
+
+
+<view class="cu-bar bg-white margin-top-sm">
+  <view class="action">
+    相关截图（选填）
+  </view>
+  <view class="action">
+     {{img_select?1:0}}/1
+  </view>
+</view>
+<view class="cu-form-group">
+  <view class="grid col-2 grid-square flex-sub">
+    <view class="bg-img" hidden="{{!img_select}}" bindtap="ViewImage">
+      <image src='{{imgList[0]}}' mode='aspectFill'></image>
+      <view class="cu-tag bg-red" catchtap="DelImg">
+        <text class="cuIcon-close"></text>
+      </view>
+    </view>
+    <view hidden="{{img_select}}" class="solids" bindtap="ChooseImage">
+      <text class="cuIcon-cameraadd"></text>
+    </view>
+  </view>
+</view>
+
+  <view class="margin-top-xs text-grey padding-left-lg">
+    <text class="cuIcon-emoji"></text>
+    输入有效联系方式以便开发者联系您
+
+  </view>
+	<view class="cu-form-group margin-top-xs">
+		<view class="title">联系方式（选填）</view>
+		<input placeholder="QQ号/微信号" bindinput="contactInput"></input>
+	</view>
+
+
+<view class="padding-lr-xl margin-top-sm text-center">
+  <text class="text-sm text-grey">
+欢迎您为我们提出宝贵的意见和建议，您留下的任何信息都将用来改善我们的软件
+</text>
+</view>
+
+<!-- 上传按钮 -->
+<view class="margin-top-lg text-center padding-lr-sm margin-bottom-lg">
+  <button class="cu-btn radius bg-green padding-sm" style="width:100%" bindtap="submit">上 传</button>
+</view>

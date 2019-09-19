@@ -1,0 +1,6 @@
+.radius-mine {
+  border-radius: 20rpx;
+  text-indent: 70rpx;
+  font-size: 35rpx;
+  line-height: 50rpx;
+}

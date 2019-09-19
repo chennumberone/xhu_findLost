@@ -1,0 +1,67 @@
+<!-- 个人信息 -->
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">个人信息</view>
+</cu-custom>
+
+<view class="out">
+  <view class="bg-green light padding-lg in">
+    <view class="text-center text-bold title">温馨提示</view>
+    <view class="intent">
+      请您认真填写个人信息，查看联系方式需要个人信息的完善。谢谢亲们！！！祝学习进步，天天开心！！！
+    </view>
+  </view>
+
+  <!-- 信息填写 -->
+  <view class="padding-lg" style="margin-top:40rpx">
+    <!-- 姓名 -->
+    <view class="name flex input">
+      <view style="width:65rpx" class="flex align-center">
+        <image src="../../../img/name.png"></image>
+      </view>
+      <input  disabled="{{isDisabled}}" placeholder="姓名" bindinput="nameInput" value="{{stuName}}" ></input>
+    </view>
+
+    <!-- 学号 -->
+    <view class="name flex input">
+      <view style="width:65rpx" class="flex align-center">
+        <image src="../../../img/num.png"></image>
+      </view>
+      <input  disabled="{{isDisabled}}" type="number" bindinput="numInput" placeholder="学号" value="{{stuNum}}"></input>
+    </view>
+
+ <!-- 年级 -->
+    <view class="name flex input">
+      <view style="width:65rpx" class="flex align-center">
+        <image src="../../../img/class.png"></image>
+      </view>
+      <picker disabled="{{isDisabled}}" bindchange="PickerChange1" value="{{index1}}" range="{{picker1}}">
+        <input disabled="disabled" placeholder="年级" value="{{picker1[index1]}}"></input>
+      </picker>
+    </view>
+
+    <!-- 学院 -->
+    <view class="name flex input">
+      <view style="width:65rpx" class="flex align-center">
+        <image src="../../../img/academy.png"></image>
+      </view>
+      <picker  disabled="{{isDisabled}}" style="width:100%" bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+        <input  disabled="disabled" placeholder="学院" value="{{picker[index]}}"></input>
+      </picker>
+    </view>
+
+    <!-- 专业 -->
+    <view class="name flex input" style="margin-bottom:20rpx">
+      <view style="width:65rpx" class="flex align-center">
+        <image src="../../../img/major.png"></image>
+      </view>
+      <input  disabled="{{isDisabled}}"  bindinput="majorInput" placeholder="专业" value="{{stuMajor}}"></input>
+    </view>
+  </view>
+
+
+  <!-- 保存 -->
+  <view class="text-center margin-bottom-lg">
+    <button class="cu-btn round bg-blue light shadow" role="button" aria-disabled="false" style="width:180rpx" bindtap="submit">{{isSave?'保 存':'修 改'}}</button>
+  </view>
+</view>

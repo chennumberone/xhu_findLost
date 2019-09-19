@@ -1,0 +1,6 @@
+
+<!--index.wxml-->
+<cu-custom bgColor="bg-gradual-pink" isBack="{{false}}">
+	<view slot="backText">返回</view>
+	<view slot="content">导航栏</view>
+</cu-custom>

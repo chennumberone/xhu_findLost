@@ -1,0 +1,77 @@
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">发布</view>
+</cu-custom>
+
+<view class="cu-form-group text-xl">
+  {{publish_category}}发布
+</view>
+<view class="cu-form-group margin-top-sm">
+  <view class="title">类别-物品</view>
+  <picker mode="multiSelector" bindchange="MultiChange" bindcolumnchange="MultiColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+    <view class="picker">
+      <view wx:if="{{multiIndex[0]!=-1}}" class="cu-tag line-green margin-right-lg">
+        {{multiArray[0][multiIndex[0]]}}
+      </view>
+
+       <view wx:else class="cu-tag line-green margin-right-lg">
+        请选择
+      </view>
+
+
+      {{multiArray[1][multiIndex[1]]}}
+    </view>
+  </picker>
+</view>
+
+<view class="cu-form-group margin-top-sm">
+  <view class="title">地点</view>
+</view>
+<view class="cu-form-group">
+  <input  placeholder="亲，请输入{{publish_category=='失物寻找'?'失物丢失':'捡到失物'}}的地点" bindinput="placeInput"></input>
+</view>
+
+<view class="cu-form-group margin-top-sm" style="font-weight:bold">
+  附言
+</view>
+<view class="cu-form-group ">
+  <textarea maxlength="-1" bindinput="postscrptInput" placeholder="亲，请输入对失物的相关描述"></textarea>
+</view>
+
+<view class="cu-bar bg-white margin-top-sm">
+  <view class="action" style="font-weight:bold">
+    图片上传{{publish_category=='失物寻找'?'(选填)':''}}
+  </view>
+  <view class="action">
+     {{img_select?1:0}}/1
+  </view>
+</view>
+<view class="cu-form-group">
+  <view class="grid col-2 grid-square flex-sub">
+    <view class="bg-img" hidden="{{!img_select}}" bindtap="ViewImage">
+      <image src='{{imgList[0]}}' mode='aspectFill'></image>
+      <view class="cu-tag bg-red" catchtap="DelImg">
+        <text class="cuIcon-close"></text>
+      </view>
+    </view>
+    <view hidden="{{img_select}}" class="solids" bindtap="ChooseImage">
+      <text class="cuIcon-cameraadd"></text>
+    </view>
+  </view>
+</view>
+
+<view class="cu-form-group margin-top-sm">
+  <view class="title">联系方式</view>
+  <view class="margin-left-sm flex">
+    <view class="contact-way {{contact_select[0]?'cu-tag line-green':''}}" data-id="qq" bindtap="contact_way_change">扣扣</view>
+    <view class="contact-way {{contact_select[1]?'cu-tag line-green':''}}" data-id="weixin" bindtap="contact_way_change">微信</view>
+    <view class="contact-way {{contact_select[2]?'cu-tag line-green':''}}" data-id="phone" bindtap="contact_way_change">手机号</view>
+  </view>
+</view>
+<view class="cu-form-group">
+  <input placeholder="亲，请输入你的{{contact_way}}" bindinput="contactInput"></input>
+</view>
+
+<view class="padding-sm">
+  <button class="cu-btn bg-green margin-tb-sm lg" bindtap="submit">立即发布</button>
+</view>

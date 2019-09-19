@@ -1,0 +1,29 @@
+.out {
+  padding: 0 30rpx 30rpx 30rpx;
+}
+
+.title {
+  font-size: 34rpx;
+  font-weight: bold;
+}
+
+.content {
+  line-height: 1.5;
+  letter-spacing: 3.5rpx;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.content1 {
+  letter-spacing: 3.5rpx;
+  line-height: 1.5;
+}
+
+.radius {
+  border-radius: 15rpx;
+}

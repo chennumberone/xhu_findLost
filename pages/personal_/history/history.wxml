@@ -1,0 +1,29 @@
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">发布历史</view>
+</cu-custom>
+<view class="out" wx:for="{{hisData}}">
+
+  <view class="contain shadow bg-white padding-sm " data-bigkind="{{item.kind=='失物寻找'?'true':'false'}}" data-id="{{item.goodsId}}" bindtap="info_detail">
+    <view class="flex">
+      <image src="{{url}}{{item.goodsPhoto}}"></image>
+      <view class="margin-left-sm padding-top-sm">
+        <view style="font-size:50rpx" class="margin-bottom-sm">
+          {{item.kind=='失物寻找'?'寻找失物':'寻找失主'}}
+        </view>
+        <view class="margin-top-lg" style="font-size:40rpx">
+          <text style="font-size:45rpx">{{item.goodsSmallkind}} </text>
+          <text class="cu-tag line-green">{{item.goodsBigkind}}</text>
+        </view>
+        <view class="margin-top-lg" style="font-size:40rpx">
+          <text class="cuIcon-time lg text-green"></text> {{item.goodsPubtime}}
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>
+<view class="text-center margin-bottom-sm">
+  没 有 更 多 了
+  <text style="font-size:35rpx" class="cuIcon-emoji lg text-green"></text>
+</view>

@@ -1,0 +1,81 @@
+<cu-custom bgColor="bg-gradual-green" isBack="{{false}}">
+  <view slot="backText">返回</view>
+  <view slot="content">动态</view>
+</cu-custom>
+
+<!-- 顶部导航 -->
+<view class="bg-white flex fixed-mine" style="top:{{CustomBar}}px">
+  <view bindtap="selected_btn1" class="{{selected?'select':''}} flex-treble  text-center text-green padding-sm text-lg flex justify-center">
+    <view>寻 找 失 物</view>
+    <view class="cu-tag bg-green round margin-left-sm text-lg">找</view>
+
+  </view>
+  <view class="flex-sub cu-item text-center padding-top-sm" bindtap="showModal" data-target="RadioModal">
+    <view class="cu-tag line-green">{{bigKind}}</view>
+    <text class="cuIcon-unfold  text-green"></text>
+  </view>
+  <view bindtap="selected_btn2" class="{{!selected?'select':''}} text-green text-lg flex-treble text-center padding-sm flex justify-center">
+    <view>归 还 失 物</view>
+    <view class="cu-tag bg-green round margin-left-sm text-lg">捡</view>
+  </view>
+</view>
+
+<!-- 轮番图 -->
+<swiper style="margin-top:85rpx" class="bg-white card-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="3500" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
+  <swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
+    <view class="swiper-item">
+      <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+      <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+    </view>
+  </swiper-item>
+</swiper>
+
+<!-- 内容主体 -->
+<view class="grid col-2 margin-bottom text-center margin-top-sm">
+  <view class="padding-sm" wx:for="{{dataList}}">
+    <view class="radius  content-mine bg-white  padding-sm shadow-warp" data-id="{{item.goodsId}}" data-bigkind="{{selected}}" bindtap="info_detail">
+      <view class="info-img">
+        <!-- <open-data type="userAvatarUrl"></open-data> -->
+        <image src="{{url}}{{item.goodsPhoto}}"></image>
+      </view>
+      <view class="margin-top-sm flex">
+        <view class="text-xl flex-sub padding-right-sm">{{item.goodsSmallkind}}</view>
+        <view class="flex-sub padding-left-lg">
+          <view class="cu-tag line-green  flex-sub">{{item.goodsBigkind}}</view>
+        </view>
+      </view>
+      <view class="margin-top-sm flex  padding-left-sm padding-right-sm">
+        <view class="cu-item">
+          <text class="cuIcon-time text-lg text-gray"></text>
+        </view>
+        <view class="margin-left-sm">
+          {{item.goodsPubtime}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+
+<!-- 分类 -->
+
+<view class="cu-modal {{modalName=='RadioModal'?'show':''}}" bindtap="hideModal">
+  <!-- 这里的catchtap我直觉是屏蔽全局的bindtap -->
+  <view class="cu-dialog margin-top-xl" catchtap>
+    <view class="padding-sm;">
+      <view class="grid sort col-3 text-center">
+        <view bindtap="bigKind_change" class="bg-red shadow-blur radius padding-xl" data-bigkind='证件' hover-class="category-change">证件</view>
+        <view bindtap="bigKind_change" class="bg-orange shadow-blur radius padding-xl" data-bigkind='电子' hover-class="category-change">电子</view>
+        <view bindtap="bigKind_change" class="bg-cyan shadow-blur radius padding-xl" data-bigkind='生活用品' hover-class="category-change">生活用品</view>
+        <view bindtap="bigKind_change" class="bg-blue shadow-blur radius padding-xl" data-bigkind='学习' hover-class="category-change">学习</view>
+        <view bindtap="bigKind_change" class="bg-green shadow-blur radius padding-xl" data-bigkind='全部' hover-class="category-change">全部</view>
+        <view bindtap="bigKind_change" class="bg-pink shadow-blur radius padding-xl" data-bigkind='配饰' hover-class="category-change">配饰</view>
+        <view  class="bg-grey light shadow-blur radius padding-xl"></view>
+        <view bindtap="bigKind_change" class="bg-mauve shadow-blur radius padding-xl" data-bigkind='其他' hover-class="category-change">其他</view>
+        <view  class="bg-grey light shadow-blur radius padding-xl"></view>
+      </view>
+    </view>
+
+  </view>
+</view>

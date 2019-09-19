@@ -1,0 +1,20 @@
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">用户群友</view>
+</cu-custom>
+<view class="padding-sm">
+  <view class="bg-green light radius-mine padding-lg">
+    各位同学好，XHU智寻的诞生是为了更加智能高效的处理失物招领事务，智寻的成长少不了大家的献计献策，小可爱们赶快加入吧。
+  </view>
+  <view class="text-bold radius-mine text-lg text-center margin-top-lg">
+    QQ群（863633986）
+  </view>
+  <view class="flex justify-center margin-top-sm">
+    <view class="cu-tag bg-green light round" bindtap="copyNum">
+      点击复制群号
+    </view>
+  </view>
+  <view class="margin-top-sm">
+    <image src="../../../img/qq.jpg" mode="widthFix" style="width:100%"></image>
+  </view>
+</view>
