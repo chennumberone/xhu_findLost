@@ -10,6 +10,8 @@
     <view class="cu-tag bg-green round margin-left-sm text-lg">找</view>
 
   </view>
+
+  
   <view class="flex-sub cu-item text-center padding-top-sm" bindtap="showModal" data-target="RadioModal">
     <view class="cu-tag line-green">{{bigKind}}</view>
     <text class="cuIcon-unfold  text-green"></text>
@@ -71,9 +73,9 @@
         <view bindtap="bigKind_change" class="bg-blue shadow-blur radius padding-xl" data-bigkind='学习' hover-class="category-change">学习</view>
         <view bindtap="bigKind_change" class="bg-green shadow-blur radius padding-xl" data-bigkind='全部' hover-class="category-change">全部</view>
         <view bindtap="bigKind_change" class="bg-pink shadow-blur radius padding-xl" data-bigkind='配饰' hover-class="category-change">配饰</view>
-        <view  class="bg-grey light shadow-blur radius padding-xl"></view>
+        <view class="bg-grey light shadow-blur radius padding-xl"></view>
         <view bindtap="bigKind_change" class="bg-mauve shadow-blur radius padding-xl" data-bigkind='其他' hover-class="category-change">其他</view>
-        <view  class="bg-grey light shadow-blur radius padding-xl"></view>
+        <view class="bg-grey light shadow-blur radius padding-xl"></view>
       </view>
     </view>
 

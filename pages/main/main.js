@@ -468,7 +468,6 @@ Page({
     }
   },
   info_detail: function(e) {
-
     let id = e.currentTarget.dataset.id;
     let bigkind = e.currentTarget.dataset.bigkind;
     console.log(e)

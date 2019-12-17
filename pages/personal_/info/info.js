@@ -112,19 +112,6 @@ Page({
       })
     }
 
-    // //取出上传次数（用户清楚缓存会出现问题）
-    // var upload_times = 1;
-    // try {
-    //   const res = wx.getStorageInfoSync();
-    //   for (let i = 0; i < res.keys.length; i++) {
-    //     if (res.keys[i] == "personalInfo") {
-    //       upload_times = wx.getStorageSync("personalInfo").upload_times;
-    //       upload_times++;
-    //     }
-    //   }
-    // } catch (e) {
-    //   console.log(e)
-    // }
 
     //上传信息
     wx.request({
@@ -143,7 +130,7 @@ Page({
       },
       success(res) {
         if (res.data == 'yes') {
-          success_upload();
+          
           //保存变修改
           that.data.isSave=false;
           that.data.isDisabled="disabled";
@@ -155,15 +142,13 @@ Page({
             "index": that.data.index,
             "stuMajor": that.data.stuMajor,
             "isSave":that.data.isSave,
-            "isDisabled":that.data.isDisabled,
-            "upload_times": upload_times
+            "isDisabled":that.data.isDisabled
           }
           wx.setStorage({
             key: 'personalInfo',
             data: json_obj,
           })
-          
-
+          success_upload();
         } else {
           wx.showToast({
             title: '系统故障',
